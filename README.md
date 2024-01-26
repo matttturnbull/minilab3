@@ -21,13 +21,14 @@ Note: This surface has been created and tested to work on Live version `11.3.21`
 
 To install the Control Surface in Ableton:
 
-1. Navigate to your Control Surface directory:
+1. Clone or download and unzip this repo
+2. Navigate to your Control Surface directory:
 * Mac: `/Applications/Music/Ableton Live 11.app/Contents/App-Resources/MIDI Remote Scripts`
 * Windows: `\Users\[Username]\AppData\Roaming\Ableton\Live x.x.x\Preferences\User Remote Scripts`
-2. Back up your `/MiniLab_3` folder (keep a copy to revert to zipped up somewhere)
-3. Replace with the `/ableton/MiniLab_3` folder in this repo
-4. Restart Ableton Live and select the MiniLab 3 as your Control Surface in the MIDI preferences
-5. If the tempo Shift + Tap button has turned orange, you're good to go. 👍
+3. Back up your `/MiniLab_3` folder (keep a copy to revert to zipped up somewhere)
+4. Replace with the `/ableton/MiniLab_3` folder in this repo
+5. Restart Ableton Live and select the MiniLab 3 as your Control Surface in the MIDI preferences
+6. If the tempo Shift + Tap button has turned orange, you're good to go. 👍
 
 ### Links
 
