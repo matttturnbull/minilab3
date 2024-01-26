@@ -28,7 +28,7 @@ To install the Control Surface in Ableton:
 3. Back up your `/MiniLab_3` folder (keep a copy to revert to zipped up somewhere)
 4. Replace with the `/ableton/MiniLab_3` folder in this repo
 5. Restart Ableton Live and select the MiniLab 3 as your Control Surface in the MIDI preferences
-6. If the tempo Shift + Tap button has turned orange, you're good to go. 👍
+6. If the tempo Shift + Tap button has turned orange, you're good to go 👍
 
 ### Links
 
