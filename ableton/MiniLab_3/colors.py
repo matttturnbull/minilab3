@@ -1,6 +1,10 @@
 from __future__ import absolute_import, print_function, unicode_literals
 from ableton.v3.control_surface import BasicColors
-from ableton.v3.control_surface.elements import FallbackColor, RgbColor, create_rgb_color
+from ableton.v3.control_surface.elements import (
+    FallbackColor,
+    RgbColor,
+    create_rgb_color,
+)
 from ableton.v3.live import liveobj_color_to_midi_rgb_values
 
 
@@ -32,8 +36,7 @@ class Skin:
 
     class DrumGroup:
         PadEmpty = Rgb.WHITE_HALF
-        def PadFilled(x): return create_rgb_color(
-            liveobj_color_to_midi_rgb_values(x))
+        PadFilled = lambda x: create_rgb_color(liveobj_color_to_midi_rgb_values(x))
         PadSelected = Rgb.OCEAN
         PadMuted = Rgb.AMBER
         PadMutedSelected = Rgb.OCEAN
@@ -62,9 +65,7 @@ class Skin:
         Slot = Rgb.OFF
         SlotRecordButton = Rgb.RED_LOW
         NoSlot = Rgb.OFF
-
-        def ClipStopped(x): return create_rgb_color(
-            liveobj_color_to_midi_rgb_values(x))
+        ClipStopped = lambda x: create_rgb_color(liveobj_color_to_midi_rgb_values(x))
         ClipTriggeredPlay = Rgb.GREEN_HALF
         ClipTriggeredRecord = Rgb.RED_HALF
         ClipPlaying = Rgb.GREEN
