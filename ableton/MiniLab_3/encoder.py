@@ -4,10 +4,11 @@ from ableton.v3.live import liveobj_valid, parameter_value_to_midi_value
 from .display_util import make_blank_parameter_message, make_parameter_message
 from .midi import ENCODER_ID_TO_SYSEX_ID, ENCODER_VALUE_HEADER, SYSEX_END
 
+
 class RealigningEncoderMixin:
 
     def __init__(self, *a, **k):
-        (super().__init__)(*a, **k)
+        super().__init__(*a, **k)
         self._sysex_header = self._get_sysex_header()
         self._last_mapped_value = None
 
@@ -28,7 +29,7 @@ class RealigningEncoderMixin:
 class EncoderElement(EncoderElementBase):
 
     def __init__(self, *a, **k):
-        (super().__init__)(*a, **k)
+        super().__init__(*a, **k)
         self._last_sent_parameter_message = None
 
     def notify_parameter_name(self):
@@ -46,7 +47,9 @@ class EncoderElement(EncoderElementBase):
     def _send_parameter_feedback(self):
         ident = self.message_identifier()
         if liveobj_valid(self.mapped_object):
-            self._send_message(make_parameter_message(ident, self.parameter_name, self.parameter_value))
+            self._send_message(
+                make_parameter_message(ident, self.parameter_name, self.parameter_value)
+            )
         else:
             self._send_message(make_blank_parameter_message(ident))
 
@@ -60,5 +63,6 @@ class RealigningEncoderElement(RealigningEncoderMixin, EncoderElement):
 
     def _get_sysex_header(self):
         return ENCODER_VALUE_HEADER + (
-         ENCODER_ID_TO_SYSEX_ID[self.message_identifier()],
-         0)
+            ENCODER_ID_TO_SYSEX_ID[self.message_identifier()],
+            0,
+        )
